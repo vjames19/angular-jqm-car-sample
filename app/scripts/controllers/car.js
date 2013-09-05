@@ -3,19 +3,7 @@ angular.module('angularJqmMixerApp').controller('CarCtrl', function ($scope, Car
   $scope.cars = Cars.getCars();
 
   $scope.selectCar = function (car) {
+    $scope.cars = Cars.getCars();
     $scope.selectedCar = car;
   };
-
-  $scope.addCar = function () {
-    Cars.addCar($scope.manufacturer, $scope.model, $scope.price, $scope.description, $scope.img);
-    $scope.clearAddCarForm();
-  };
-
-  $scope.clearAddCarForm = function () {
-    $scope.manufacturer = null;
-    $scope.model = null;
-    $scope.price = null;
-    $scope.description = null;
-    $scope.img = null;
-  }
 });

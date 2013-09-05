@@ -1,0 +1,25 @@
+<div data-role="page" id="car-details">
+  <div data-theme="a" data-role="header" data-position="fixed">
+    <h3>{{ car.manufacturer }}</h3>
+    <a href="#cars" data-icon="arrow-l">Back</a>
+  </div>
+  <div data-role="content">
+    <img style="width: 300px; height: 200px" ng-src="{{ car.img }}">
+    <table data-role="table" id="my-table" data-mode="reflow">
+      <thead>
+      <tr>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th>{{ car.model }}</th>
+        <td>{{ car.price | currency }}</td>
+        <td>{{ car.description }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

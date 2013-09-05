@@ -1,0 +1,28 @@
+<div data-role="page" id="add-car">
+  <div data-role="header">
+    <h3>Add Car</h3>
+    <a href="#cars" data-icon="arrow-l">Back</a>
+  </div>
+  <div data-role="content">
+    <!-- Using data-ajax = false to handle the form submission manually-->
+    <form name="addCarForm" class="css-form" data-ajax="false">
+      <input type="text" placeholder="Manufacturer" ng-model="manufacturer"
+             data-clear-btn="true" required/>
+      <input type="text" placeholder="Model" ng-model="model" data-clear-btn="true" required/>
+      <input type="number" placeholder="Price" ng-model="price" required/>
+      <input type="url" placeholder="Image Url" ng-model="img" data-clear-btn="true" required/>
+      <textarea placeholder="Car description" ng-model="description"></textarea>
+
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <!-- Use anchor to prevent validation-->
+          <a data-role="button" ng-click="clearAddCarForm()">Clear</a>
+        </div>
+        <div class="ui-block-b">
+          <!-- Using a button lets jqm validate the form -->
+          <button ng-click="addCarForm.$valid && addCar()" data-theme="b">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
